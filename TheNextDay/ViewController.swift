@@ -20,6 +20,9 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var dateChooser: UIDatePicker!
   
+  @IBOutlet var mainView: UIView!
+  
+  
   @IBAction func onCick(_ sender: Any) {
     
     let dateformatter = DateFormatter()
@@ -57,11 +60,27 @@ class ViewController: UIViewController {
     self.weekDay.text = nextWeekDay
     self.lunarDate.text = nextLunar
     self.holiday.text = nextHoliday
+    
+    if Const.holidayBackDict.keys.contains(nextSolarHoliday) {
+      self.mainView.backgroundColor = UIColor.init(patternImage: UIImage(named: Const.holidayBackDict[nextSolarHoliday]!)!)
+      self.mainView.layer.contents = UIImage(named: Const.holidayBackDict[nextSolarHoliday]!)?.cgImage
+    }else if Const.holidayBackDict.keys.contains(nextLunarHoliday) {
+      self.mainView.backgroundColor = UIColor.init(patternImage: UIImage(named: Const.holidayBackDict[nextLunarHoliday]!)!)
+      self.mainView.layer.contents = UIImage(named: Const.holidayBackDict[nextLunarHoliday]!)?.cgImage
+    }else if Const.holidayBackDict.keys.contains(nextWeekHoliday) {
+      self.mainView.backgroundColor = UIColor.init(patternImage: UIImage(named: Const.holidayBackDict[nextWeekHoliday]!)!)
+      self.mainView.layer.contents = UIImage(named: Const.holidayBackDict[nextWeekHoliday]!)?.cgImage
+    }else {
+      self.mainView.backgroundColor = UIColor.init(patternImage: UIImage(named: "background/bac_normal.png")!)
+      self.mainView.layer.contents = UIImage(named: "background/normal.png")?.cgImage
+    }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.mainView.backgroundColor = UIColor.init(patternImage: UIImage(named: "background/bac_normal.png")!)
+    self.mainView.layer.contents = UIImage(named: "background/normal.png")?.cgImage
   }
 
   override func didReceiveMemoryWarning() {
