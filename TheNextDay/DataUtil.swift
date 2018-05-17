@@ -233,7 +233,7 @@ class DataUtil {
   class func getWeekHoliday(solarDate: SolarDate) -> String {
     for i in 0..<Const.weekHolidays.count {
       let weekHoliday: WeekHoliday = Const.weekHolidays[i]
-      if weekHoliday.getMonth() == solarDate.getMonth() && weekHoliday.getDayOfWeek() == getDayOfWeek(solarDate: solarDate) && weekHoliday.getDayth() == getDayOfWeek(solarDate: solarDate) {
+      if weekHoliday.getMonth() == solarDate.getMonth() && weekHoliday.getDayOfWeek() == getDayOfWeek(solarDate: solarDate) && weekHoliday.getDayth() == getDayInWeek(solarDate: solarDate) {
         return weekHoliday.getHoliday()
       }
     }
