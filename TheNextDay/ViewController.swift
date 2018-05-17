@@ -23,12 +23,12 @@ class ViewController: UIViewController {
   @IBAction func onCick(_ sender: Any) {
     
     let dateformatter = DateFormatter()
-    dateformatter.dateFormat = "dd"
-    let day: Int! = Int(dateformatter.string(from: self.dateChooser.date))
-    dateformatter.dateFormat = "MM"
-    let month: Int! = Int(dateformatter.string(from: self.dateChooser.date))
-    dateformatter.dateFormat = "YYYY"
-    let year: Int! = Int(dateformatter.string(from: self.dateChooser.date))
+    dateformatter.dateStyle = .short
+    let ymd: [String] = dateformatter.string(from: self.dateChooser.date).components(separatedBy: "/") //从UIDatePicker 获取的格式为"YYYY/MM/dd"
+    
+    let year: Int! = Int(ymd[0])
+    let month: Int! = Int(ymd[1])
+    let day: Int! = Int(ymd[2])
     
     let now: SolarDate =  SolarDate()
     now.setDay(day: day);
