@@ -121,4 +121,22 @@ class Const {
     LunarHoliday(month: 12, day: 23, holiday: "北方小年(扫房)"),
     LunarHoliday(month: 12, day: 24, holiday: "南方小年(掸尘)")
   ]
+  
+  static var holidayBackDict: Dictionary<String, String> = [
+    "元旦": "background/bac_1_1.jpg",
+    "情人节": "background/bac_2_14.jpg",
+    "植树节 孙中山逝世纪念日": "background/bac_3_12.jpg",
+    "劳动节": "background/bac_5_1.jpg",
+    "520": "background/bac_5_20.jpg",
+    "国际儿童节": "background/bac_6_1.jpg",
+    "国庆节 国际音乐日": "background/bac_10_1.jpg",
+    "圣诞节": "background/bac_12_25.jpg",
+    "春节": "background/bac_chunjie.jpg",
+    "端午节": "background/bac_duanwu.jpg",
+    "父亲节": "background/bac_fuqinjie.jpg",
+    "母亲节": "background/bac_muqinjie.jpg",
+    "清明节": "background/bac_qingming.jpg",
+    "元宵节": "background/bac_yuanxiao.jpg",
+    "中秋节": "background/bac_zhongqiu.jpg"
+  ]
 }
